@@ -1,0 +1,26 @@
+<html>
+
+<head>
+	<title>Fibonacci Series</title>
+</head>
+
+<body>
+	<a routerLink="/back">Back</a>
+	<div align="center">
+		<h1>Fibonacci Series</h1>
+		Enter the n for Printing the Fibonacci Series:
+		<input type="number" [(ngModel)]="nVariable"  name="nVariable" required/><br/>
+		<br/>
+
+  </div>
+		<div align="center">
+			<button type="button" (click)="printFibonacciSeries()">Submit</button> <br/><br/>
+			<button type="button" (click)="numberList=[];nVariable=0">Reset</button>
+		</div>
+		<div align="center" *ngIf="numberList && numberList.length > 0">
+			<div *ngFor="let fibNo of numberList;">{{fibNo}}
+			</div>
+		</div>
+</body>
+
+</html>

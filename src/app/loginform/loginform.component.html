@@ -1,0 +1,21 @@
+<html>
+
+<head>
+	<title>Login Form</title>
+</head>
+
+<body>
+	<a routerLink="/back">Back</a>
+	<div align="center">
+		<h1>Login Form</h1>
+		Enter the user name : <input type="email" [(ngModel)]="user.emailId"  name="emailId" required/><br/>
+		<br/>
+	Enter the password : &nbsp;<input type="password" [(ngModel)]="user.password" name="password" required/><br/>
+		<br/>
+  </div>
+		<div align="center">
+			<button type="button" (click)="checkPassword()">Submit</button>
+		</div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<title>Login Form</title>
+</head>
+
+<body>
+	<a routerLink="/back">Back</a>
+	<div align="center">
+		<h1>Personal Details Form</h1>
+		<form [formGroup]="form" class="user-form">
+			Enter the name :
+			&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  formControlName="name"  name="name" required/><br/>
+			<br/>
+			Enter the Email Id : <input type="email"  formControlName="emailId"  name="emailId" required/><br/>
+			<br/>
+      Select the State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<select ngModel="[(personDetail.state)]" [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let state1 of states;" value="state1">{{state1}}</option>
+  
+  </select><br/><br/>
+    Select the City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<select ngModel="[(personDetail.city)]" [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let city1 of cities;" value="city1">{{city1}}</option>
+  
+  </select><br/><br/>
+			Enter the Contact NO.: <input type="number"  formControlName="contact"  name="contact" required/><br/><br/>
+		</form>
+	</div>
+	<div align="center">
+		<button type="button" (click)="setDetails()">Submit</button><br/><br/>
+		<button type="button" (click)="clearDetails()">Clear</button>
+	</div>
+	<table *ngIf="personDetails && personDetails.length > 0">
+		<tr>
+			<th>name</th>
+			<th>Email Id</th>
+			<th>State</th>
+			<th>City</th>
+			<th>Contact</th>
+		</tr>
+		<tr *ngFor="let personDetail of personDetails;">
+			<td>{{personDetail.name}}</td>
+			<td>{{personDetail.emailId}}</td>
+			<td>{{personDetail.state}}</td>
+			<td>{{personDetail.city}}</td>
+			<td>{{personDetail.contact}}</td>
+		</tr>
+
+	</table>
+</body>
+
+</html>
